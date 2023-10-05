@@ -1,0 +1,199 @@
+Create CIFS SVM without AD
+**************************
+> vserver create -vserver <svm-name>
+
+> vserver cifs create -workgroup workgroup -vserver <svm-name> -cifs-server <svm-name> -status-admin up
+
+> set advanced
+
+> vserver cifs options modify -vserver <svm-name> -smb3-enabled true
+
+> vserver cifs users-and-groups local-user create -user-name <svm-name>\admin1 
+
+> vserver cifs users-and-groups local-user set-password modify -user-name <svm-name>\admin1 
+
+Then 
+- create volume 
+- create lif
+
+Original FS
+
+10am Create SS1
+- fileA (10m)
+- fileB (15m)
+User write to 
+- fileA (20m)
+11am Create SS2
+- fileA (10m)
+User delete
+- fileA
+
+Admin delete
+SS2
+
+Which snapshot you used to restore fileA?
+
+volume  (200G)
+- 5% snapshot reserved (10G)
+- max upto 254 ss
+- 1024 ss
+
+BCnDR strategy
+- backup / replication
+
+
+
+
+SnapMirror 
+- replication
+SnapMirror Vault
+- use label (disk-to-disk backup)
+SVM-DR
+
+Atomic Update
+
+snapshot 
+- clone (locked) 
+- movement  - can delete
+- snapmirror - can delete
+- smtape
+
+tilde
+ ~
+
+^ caret
+
+> chevron
+
+()
+{}
+[]
+``
+''
+""
+
+SnapMirror (Asynchronous)
+- in old times, Data Protection (DP)
+- by volume level
+- replication 
+- unlimited distance
+- will have delay
+
+MetroCluster (sychrounous)
+- by aggregate level
+- FC: 300KM
+- IP: 700KM
+- RTT: 200-250ms
+
+SnapMirror Synchronous
+- v9.5 
+- by volume level
+- guaranteed data arrived at destination before write to local
+- 150KM
+- RTT 10ms
+
+SnapMirror Vault
+- Extended Data Protection (XDP)
+- by volume level
+- disk-to-disk backup
+
+SnapMirror Busines Continuity
+- by volume level
+- underlying using SnapMirror Synchronous
+- only for SAN protocol
+
+
+
+
+SVM-DR
+- by SVM level
+- v9.3
+
+
+NSE
+- encryption by disk
+
+NVE
+- encryption by volume
+
+NAE
+- 9.6
+- encryption by aggregate
+
+Compression (by volume)
+- use CPU idle cycles to compress
+- compressible friendly - depending on workload / data type
+- database (80-85%), virtual (60-65%) , oil & gas , bmp, ppt, doc
+- not ideal - media (mp4,mp3,jpg,gif,png,mkv,avi,rmvb) , office pptx, docx,
+  xlsx 
+
+vs Deduplication (by volume)
+- use memory (hash table)
+- duplicated data
+- user documentation
+- 
+
+Deduplication (by aggregate)
+
+ EMC DataDomain
+
+
+Tape Seeding
+- backup 
+
+SnapMirror Synchronous mode
+- v9.5
+- Sync
+- StrictSync
+
+
+
+Quiesce
+- existing transaction will be allow to finish/complete
+- new transaction will be blocked
+
+source(original) 	---> destination
+- vol1		vol2
+
+10:00am something goes wrong
+
+quiecees and break the relationpship
+
+10:10am allow user to access vol2 (R+W)
+
+11:00am source - vol1
+
+Resync
+- using original relationship and update the volumes
+
+Reverse Resync
+- convert original source to become destination
+- convert destination become original source
+
+v9.3
+- RAID-TEC
+- volume rehost (move volume between SVM)
+- SVM-DR
+
+source cluster 
+volume modify -vserver SVM -volume docs -vserver-dr-protection unprotected
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
