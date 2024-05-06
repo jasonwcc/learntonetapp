@@ -1,4 +1,4 @@
-Training Material
+1. Training Material (slide/courseware)
 ---------------------------
 - Mail from gilmore.ca
   -- Sign up with personal email/password
@@ -8,5 +8,127 @@ Lab Access
 ---------------------------
 URL: https://labs.xtremelabs.io/
 - Sign up with personal email
+
+
+Student Access Code
+---------------------------
+POD1: Jia Xin 
+MOC-5YCPEWM48
+
+POD2: YK
+MOC-66K53ADRN 
+
+POD3: Okta
+MOC-6QBT6Z74U
+
+POD4: Afian
+MOC-C4785U4ZB
+
+POD5: Indhran
+MOC-BMPBE3L7K
+
+POD6: Ade
+MOC-DQJZPQ542
+
+Instructor Access Code
+------------------------------
+MOC-KA2S8JYGG
+
+v7.x
+- 7mode 
+- 1-2 (HA pair)
+- vFiler
+
+v8.x
+- vserver
+- cluster Mode 
+  - NAS (24 nodes)
+  - NAS+SAN (12 nodes)
+
+- SVM
+
+v9.14.1
+ASA
+- AFF + SAN configuration
+
+SAN (Storage Area Network)
+- block-based ==> LUN
+- propietory hw
+- FC / FCoE / iSCSI / NVMeFC / NVMeTCP
+
+NAS (network storage attached)
+- file-based
+- Linux/Unix NFS (mount) / CIFS (\\ip-or-fqdn\
+- IP-based
+
+Object-based
+- S3 / StorageGRID
+- browser / http(s) 
+- Restful API (put, post, get, patch)
+
+
+Storwize V7000
+
+controller/node
+- cpu (cores 3.x/2,xGHz)
+- DRAM (G-T)
+- Hdisk/SSD (T)
+- network ports (1G/s 10G/s, 25G/s, 40G/s)
+- NVRAM (HA pair) T
+
+NL-SAS HDD (SATA)
+- 7200 rpm
+SAS-HDD
+- 10k/15k rpm
+
+SAS-SSD
+- milisecond 
+NVMe-SSD
+- microsecond
+
+
+Ontap simulator
+
+Ontap Select
+
+
+AFF900
+
+FAS9000
+
+MC FC (director, FC switches)
+- ongoing
+- 300km
+MC IP (VPN)
+- ongoing
+- 700km
+
+Module 5
+1 split node
+2 Root-Data 
+3 Root-Data-Data
+
+FIPS
+
+I TKLSM
+
+Tivoli 
+
+Hashicorp
+
+
+volume show -vserver -size >5G
+
+vserver show -vserver
+s
+disk show -disk
+
+SNapLock on volume = WORM (LTO) on tape
+
++60122736143
+
+
+
+
 
 
