@@ -1,4 +1,4 @@
-1. Training Material (slide/courseware)
+Training Material
 ---------------------------
 - Mail from gilmore.ca
   -- Sign up with personal email/password
@@ -12,7 +12,7 @@ URL: https://labs.xtremelabs.io/
 
 Student Access Code
 ---------------------------
-POD1: Jia Xin 
+POD1:Jia Xin 
 MOC-5YCPEWM48
 
 POD2: YK
@@ -27,107 +27,66 @@ MOC-C4785U4ZB
 POD5: Indhran
 MOC-BMPBE3L7K
 
-POD6: Ade
+POD6
 MOC-DQJZPQ542
 
 Instructor Access Code
 ------------------------------
 MOC-KA2S8JYGG
 
-v7.x
-- 7mode 
-- 1-2 (HA pair)
-- vFiler
 
-v8.x
-- vserver
-- cluster Mode 
-  - NAS (24 nodes)
-  - NAS+SAN (12 nodes)
+Windows
+- SMBv1 : protocol : embassy
+- CIFS : file system : transport
 
-- SVM
+NFSv4.1 : protocol + FS
 
-v9.14.1
-ASA
-- AFF + SAN configuration
+Linux
+- SAMBA open source package
 
-SAN (Storage Area Network)
-- block-based ==> LUN
-- propietory hw
-- FC / FCoE / iSCSI / NVMeFC / NVMeTCP
+wannacry / pedtya
 
-NAS (network storage attached)
-- file-based
-- Linux/Unix NFS (mount) / CIFS (\\ip-or-fqdn\
-- IP-based
+SAN - MPIO
+ifgroup = LACP = a0a
+- link aggregration
 
-Object-based
-- S3 / StorageGRID
-- browser / http(s) 
-- Restful API (put, post, get, patch)
+igroup - lun -- put multiple client's IQNs
 
 
-Storwize V7000
+NVMeoFC
+NVMeoTCP
 
-controller/node
-- cpu (cores 3.x/2,xGHz)
-- DRAM (G-T)
-- Hdisk/SSD (T)
-- network ports (1G/s 10G/s, 25G/s, 40G/s)
-- NVRAM (HA pair) T
+1030am
+930am
 
-NL-SAS HDD (SATA)
-- 7200 rpm
-SAS-HDD
-- 10k/15k rpm
+incremental
 
-SAS-SSD
-- milisecond 
-NVMe-SSD
-- microsecond
+9am SS1 - ABC
+10am SS2 - A2CDE
+11am SS3 - FGH
+
+BCnDR
+- RPO
+- RTO
 
 
-Ontap simulator
-
-Ontap Select
-
-
-AFF900
-
-FAS9000
-
-MC FC (director, FC switches)
-- ongoing
-- 300km
-MC IP (VPN)
-- ongoing
-- 700km
-
-Module 5
-1 split node
-2 Root-Data 
-3 Root-Data-Data
-
-FIPS
-
-I TKLSM
-
-Tivoli 
-
-Hashicorp
+policy		schedule	retention	snapmirror_label ==> snapvault
+aaanan		hourly				hourly
 
 
-volume show -vserver -size >5G
-
-vserver show -vserver
-s
-disk show -disk
-
-SNapLock on volume = WORM (LTO) on tape
-
-+60122736143
+commitment try : delete any snapshot that is not locked/used
+commitment disrupt: delete any snapshot that is not locked by (cloning)
+                    volument movement / snapmirror will be delete
+commitment destroy: delete everything
 
 
+
+Snapmirror - asynchronous replication service by volume
+- snapshots
+metrocluster - synchrounous replication service by aggregate
+- syncmirror + snapshots
+SnapVault - disk-to-disk backup solution
+- snapshots
 
 
 
