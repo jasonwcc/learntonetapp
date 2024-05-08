@@ -89,5 +89,79 @@ SnapVault - disk-to-disk backup solution
 - snapshots
 
 
+github.com/jasonwcc/learntonetapp
+
+
+
+
+
+Compression volume
+- use CPU idle cycle
+- depending workload (compressive-friendly)
+  - DB (80-85%)
+  - virtualized (70-75%)
+  - oik & gas (60-65%)
+  - xls, ppt, doc, mdb
+
+- not compressive friendly
+  media  (avi, mkv, mpg, mp4, mp3, gif, png, jpg)
+  office 2006 xlsx, pptx, docx, 
+
+Deduplication
+- use memory (hash table)
+
+2pm kl
+1pm jkt
+
+
+
+System Manager
+- single cluster netapp
+
+ActiveIQ Unified Manager
+- multi-cluster netapp
+
+
+Netapp Insight
+- proactive, remediation action
+- intelligence
+
+BlueXP 
+- PaaS , cloud based sw
+- manage netapp on-prem, netapp in cloud
+
+
+Small data block / random accesss
+- db, homedir, office productivity
+
+Large data block / Sequential access
+- movie, video, picture
+
+
+Performance Metrics
+- IOPS > 1000 --> million 
+
+- latency < milisecond, microsecond
+            MHz
+
+- throughput MB/s
+
+https://www.metricsthatmatter.com/url/u.aspx?A69D05B80210083135
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
