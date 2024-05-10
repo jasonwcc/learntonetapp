@@ -1,171 +1,62 @@
-Training Material
----------------------------
-- Mail from gilmore.ca
-  -- Sign up with personal email/password
-- redemption / license code
+100T = 100 000Gb
+1gb/s
 
-Lab Access
----------------------------
-URL: https://labs.xtremelabs.io/
-- Sign up with personal email
+10000/6=1600minute
 
+tape seeding
+
+SnapMirror
+- asynchronous replication
+- DP type
+
+SnapVault
+- disk-to-disk backup
+- XDP type
+- enable different version
+  source v9.14.1 destination v9.12.1
+
+
+
+cluster1 SVM1 ---> cluster2 SVM2,SVM3
+
+cluster1 SVM1 --> cluster1 SVM2
 
 Student Access Code
 ---------------------------
-POD1:Jia Xin 
-MOC-5YCPEWM48
 
-POD2: YK
-MOC-66K53ADRN 
 
-POD3: Okta
-MOC-6QBT6Z74U
-
-POD4: Afian
-MOC-C4785U4ZB
-
-POD5: Indhran
-MOC-BMPBE3L7K
-
-POD6
-MOC-DQJZPQ542
-
-Instructor Access Code
-------------------------------
-MOC-KA2S8JYGG
-
-
-Windows
-- SMBv1 : protocol : embassy
-- CIFS : file system : transport
-
-NFSv4.1 : protocol + FS
-
-Linux
-- SAMBA open source package
-
-wannacry / pedtya
-
-SAN - MPIO
-ifgroup = LACP = a0a
-- link aggregration
-
-igroup - lun -- put multiple client's IQNs
-
-
-NVMeoFC
-NVMeoTCP
-
-1030am
-930am
-
-incremental
-
-9am SS1 - ABC
-10am SS2 - A2CDE
-11am SS3 - FGH
-
-BCnDR
-- RPO
-- RTO
-
-
-policy		schedule	retention	snapmirror_label ==> snapvault
-aaanan		hourly				hourly
-
-
-commitment try : delete any snapshot that is not locked/used
-commitment disrupt: delete any snapshot that is not locked by (cloning)
-                    volument movement / snapmirror will be delete
-commitment destroy: delete everything
-
-
-
-Snapmirror - asynchronous replication service by volume
-- snapshots
-metrocluster - synchrounous replication service by aggregate
-- syncmirror + snapshots
-SnapVault - disk-to-disk backup solution
-- snapshots
-
-
-github.com/jasonwcc/learntonetapp
-
-
-
-
-
-Compression volume
-- use CPU idle cycle
-- depending workload (compressive-friendly)
-  - DB (80-85%)
-  - virtualized (70-75%)
-  - oik & gas (60-65%)
-  - xls, ppt, doc, mdb
-
-- not compressive friendly
-  media  (avi, mkv, mpg, mp4, mp3, gif, png, jpg)
-  office 2006 xlsx, pptx, docx, 
-
-Deduplication
-- use memory (hash table)
-
-2pm kl
-1pm jkt
-
-
-
-System Manager
-- single cluster netapp
-
-ActiveIQ Unified Manager
-- multi-cluster netapp
-
-
-Netapp Insight
-- proactive, remediation action
-- intelligence
-
-BlueXP 
-- PaaS , cloud based sw
-- manage netapp on-prem, netapp in cloud
-
-
-Small data block / random accesss
-- db, homedir, office productivity
-
-Large data block / Sequential access
-- movie, video, picture
-
-
-Performance Metrics
-- IOPS > 1000 --> million 
-
-- latency < milisecond, microsecond
-            MHz
-
-- throughput MB/s
-
-https://www.metricsthatmatter.com/url/u.aspx?A69D05B80210083135
-
-NS0-160
-Ns0-161
-Ns0-162
-Ns0-163
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+POD2
+MOC-MLMPRDA4Y
+
+SnapMirror  (Asynchronous)
+- volume
+- Async
+- scripted / manual failover 
+MetroCluster
+- aggr
+- Sync
+- automatic / transparent failover
+  mediator
+- 250ms RTT
+- 300 FC, 700km IP
+SnapMirror Business Continuity
+- Snapmirror Synchronous mode v9.5
+  <- 10ms RTT
+- LUN
+- 150 km
+- min: 16GB RAM
+
+
+C1 (s) --> C2 (d)
+x
+C1 (d) X C2 (s)
+/
+C1 (d) -- C2 (s)
+
+2. reverse resyn
+C1 (s) --> C2 (d)
+1. resync or
+C1 (d) <-- C2 (s)
 
 
 
